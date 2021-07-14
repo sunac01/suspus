@@ -137,7 +137,7 @@ class Chat:
         pass
 
     def check_input(self, user_input, msg):
-        if user_input.startswith(filters.command(['start'])& filters.private) :
+        if user_input.startswith(filters.command('start')& filters.private) :
             self.send_message(self.messages['start'])
 
         elif user_input.startswith('/music') and user_input[6:]!='':
