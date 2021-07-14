@@ -119,10 +119,10 @@ class Chat:
             file_name = Music.get_title(self, result) +' - @TLMusicDownloader_bot '+str(randint(0,999999))+'.mp3'
             file_name = file_name.replace('"', '')
 
-            self.send_message(['🎵 '+ Music.get_title(self, result)])
+            self.send_message('🎵')
             downloading_message = self.send_message('⬇️ İndiriliyor...')
 
-            Music.download_music(file_name, Music.get_link(self, result))
+            Music.download_music(self, file_name, Music.get_link(self, result))
 
             try:
                 self.send_audio(file_name)
