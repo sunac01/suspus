@@ -140,7 +140,7 @@ class Chat:
         if user_input.startswith(filters.command(['start'])&filters.private) :
             self.send_message(self.messages['start'])
 
-        elif user_input.startswith('/music')& filters.private) and user_input[6:]!='':
+        elif user_input.startswith('/music') and user_input[6:]!='':
             if 'open.spotify.com' in user_input[6:]:
             	self.send_message(self.messages['spotify_input_error'])
 
