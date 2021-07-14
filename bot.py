@@ -123,7 +123,7 @@ class Chat:
             self.send_message(['🎵 '+ Music.get_title(self, result)])
             downloading_message = self.send_message('⬇️ İndiriliyor...')
 
-            Music.download_music(self, file_name, get_link(self, result))
+            Music.download_music(self, file_name, Music.get_link(self, result))
 
             try:
                 self.send_audio(file_name)
