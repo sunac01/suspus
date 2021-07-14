@@ -120,15 +120,15 @@ class Chat:
             file_name = Music.get_title(self, result) +' - @TLMusicDownloader_bot '+str(randint(0,999999))+'.mp3'
             file_name = file_name.replace('"', '')
 
-            self.send_message(['🎵 '+ Music.get_title(self, result) +'\n'+'🔗 '+Music.get_link(self, result)])
-            downloading_message = self.send_message('⬇️ Downloading... \n_(this may take a while.)_')
+            self.send_message(['🎵 '+ Music.get_title(self, result) +'\n'+'🔗 ')])
+            downloading_message = self.send_message('⬇️ İndiriliyor...')
 
-            Music.download_music(self, file_name, Music.get_link(self, result))
+            Music.download_music(self, file_name)
 
             try:
                 self.send_audio(file_name)
                 self.delete_message(downloading_message)
-                self.send_message('✅ Sucess!')
+                self.send_message(' ')
                 print ("\nSucess!\n")
             except:
                 print("\nError")
@@ -137,10 +137,10 @@ class Chat:
         pass
 
     def check_input(self, user_input, msg):
-        if user_input.startswith(('/start')& filters.private) :
+        if user_input.startswith('/sadaodlad'):
             self.send_message(self.messages['start'])
 
-        elif user_input.startswith('/music') and user_input[6:]!='':
+        elif user_input.startswith('/e') and user_input[6:]!='':
             if 'open.spotify.com' in user_input[6:]:
             	self.send_message(self.messages['spotify_input_error'])
 
